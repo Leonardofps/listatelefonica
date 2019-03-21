@@ -27,7 +27,7 @@ class PessoaController extends Controller
     {
         $title = 'Agenda - Funcex';
        
-        $pessoas = Pessoa::with('categorias')->orderBy('nome', 'desc')->paginate(5);
+        $pessoas = Pessoa::with('categorias')->orderBy('nome', 'asc')->paginate(5);
                     
        // $pessoas = DB::table('pessoas')->orderBy('nome', 'ASC')->paginate(5);
         
