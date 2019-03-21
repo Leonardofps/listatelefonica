@@ -27,24 +27,11 @@ class PessoaController extends Controller
     {
         $title = 'Agenda - Funcex';
        
-        $pessoas = Pessoa::with('categorias')->orderBy('nome', 'ASC')->paginate(5);
-        foreach($pessoas as $pessoa){
-            echo "<br>{$pessoa->nome}: ";
-
-            foreach ($pessoa->categorias as $categoria){
-                echo "{$categoria->nome}, ";
-            }
-        }
+        $pessoas = Pessoa::with('categorias')->orderBy('nome', 'desc')->paginate(5);
+                    
        // $pessoas = DB::table('pessoas')->orderBy('nome', 'ASC')->paginate(5);
-
-     /*      echo "{$pessoas->nome}:";
-
-        $categorias = $pessoas->categorias;
-        foreach($categorias as $cat){
-        echo " {$cat->nome}, ";
-        } */
         
-      //  return view ('pessoa.novaPessoa.list', compact('title', 'pessoas'));
+        return view ('pessoa.novaPessoa.list', compact('title', 'pessoas'));
     }
     /**
      * Show the form for creating a new resource.
