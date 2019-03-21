@@ -47,6 +47,7 @@
                 <th>Nome da Secretária</th>
                 <th>Categoria</th>
                 <th width="150">Ações</th>
+
             </tr>
                 @forelse($pessoas as $pessoa)
             <tr>
@@ -56,9 +57,7 @@
                 <td>{{$pessoa->telefone}}</td>
                 <td>{{$pessoa->celular}}</td>
                 <td>{{$pessoa->nome_secretaria}}</td>
-                @foreach($pessoa->$categorias as $cat)
-                <td>{{$cat->nome}}</td>
-                @endforeach
+                <td> </td>
                 <td>
                 <a href="{{route('pessoa.edit', $pessoa->id)}}" class="edit">Editar</a>
                 <a href="{{route('pessoa.show', $pessoa->id)}}" class="delete">Ver</a>
