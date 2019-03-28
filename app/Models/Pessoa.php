@@ -16,4 +16,5 @@ class Pessoa extends Model
     public function categorias (){
         return $this->belongsToMany(Categoria::class, 'categoria_pessoa');
     }
+
 }

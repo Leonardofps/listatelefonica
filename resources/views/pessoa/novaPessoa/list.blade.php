@@ -57,7 +57,13 @@
                 <td>{{$pessoa->telefone}}</td>
                 <td>{{$pessoa->celular}}</td>
                 <td>{{$pessoa->nome_secretaria}}</td>
-                <td> </td>
+                
+                <td>
+                @foreach($pessoa->categorias as $categoria)
+                {{$categoria->nome}}, 
+                @endforeach
+                </td>
+                
                 <td>
                 <a href="{{route('pessoa.edit', $pessoa->id)}}" class="edit">Editar</a>
                 <a href="{{route('pessoa.show', $pessoa->id)}}" class="delete">Ver</a>
@@ -70,8 +76,7 @@
             @endforelse
 
         </table>
-
-        
+ 
     </div>
     <!--Content Dinâmico-->
 </div>

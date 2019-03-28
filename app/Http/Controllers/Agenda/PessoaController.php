@@ -23,15 +23,17 @@ class PessoaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Pessoa $pessoas)
     {
         $title = 'Agenda - Funcex';
        
-        $pessoas = Pessoa::with('categorias')->orderBy('nome', 'asc')->paginate(5);
+        $pessoas = Pessoa::with('categorias')
+        ->orderBy('nome', 'asc')
+        ->paginate(5);
                     
        // $pessoas = DB::table('pessoas')->orderBy('nome', 'ASC')->paginate(5);
         
-        return view ('pessoa.novaPessoa.list', compact('title', 'pessoas'));
+        return view ('pessoa.novaPessoa.list', compact('title', 'pessoas', 'categorias'));
     }
     /**
      * Show the form for creating a new resource.
