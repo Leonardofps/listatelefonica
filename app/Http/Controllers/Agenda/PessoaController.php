@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Pessoa;
 use App\Models\Categoria;
+use App\Http\Requests\PessoaStoreUpdateFormRequest;
 
 class PessoaController extends Controller
 {
@@ -53,7 +54,7 @@ class PessoaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PessoaStoreUpdateFormRequest $request)
     {   
         $pessoa = Pessoa::create($request->all());
         $pessoa->categorias()->attach($request->categorias);
@@ -72,13 +73,14 @@ class PessoaController extends Controller
      */
     public function show($id)
     {
+        $pessoas = Pessoa::with('categorias');
         $pessoa = $this->pessoa->find($id);
         if(!$pessoa)
             return redirect()->back();
         
         $title = "Visualizar pessoa: {$pessoa->nome}";
 
-        return view('pessoa.novaPessoa.show', compact('title', 'pessoa'));
+        return view('pessoa.novaPessoa.show', compact('title', 'pessoa', 'pessoas'));
     }
 
     /**
@@ -108,7 +110,7 @@ class PessoaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PessoaStoreUpdateFormRequest $request, $id)
     {
         $pessoa = $this->pessoa->find($id);
         $pessoa->categorias()->sync($request->categorias);

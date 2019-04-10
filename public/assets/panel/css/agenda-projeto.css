@@ -8,7 +8,6 @@
     min-height: 100vh;
     position: fixed;
 }
-.logo{}
 img.logo-painel{
     width: 40px;
 }
@@ -20,7 +19,7 @@ img.logo-painel{
 ul.menu-list{
     list-style: none;
 }
-ul.menu-list li{}
+
 ul.menu-list li a{
     font-size: 1em;
     margin: 14px 0px;
@@ -58,9 +57,9 @@ img.user-dashboard{
     margin: 12px 10px;
     font-weight: bold;
 }
-.dp-menu{}
+
 .user-dash span.caret{margin: 20px 0px;}
-.content-ds{}
+
 .bred{
     padding: 6px;
     float: left;
@@ -71,7 +70,7 @@ a.bred{
     width: initial;
     color: #2a3f54;
 }
-div.title-pg{}
+
 h1.title-pg{
     font-size: 2em;
     margin: 6px 10px;
@@ -115,15 +114,18 @@ h1.title-pg{
 .form-search{
     padding: 20px 0px;
 }
-.form-search form{}
+
 .form-search form input{
     border-radius: 0px !important;
 }
 .edit{
-    background: #2a3f54;
-    padding: 6px 10px;
+    padding: 0px 10px;
     margin: 0px;
-    color: #FFF;
+    float: left;
+}
+.show{
+    padding: 0px 10px;
+    margin: 0px;
     float: left;
 }
 .delete{
@@ -143,8 +145,19 @@ h1.title-pg{
     font-size: 1em;
     font-weight: bold;
 }
-.btn-insert:hover{text-decoration: none;opacity: .9;color: #FFF;}
+
+.btn-insert:hover{
+    text-decoration: none;opacity: .9;color: #FFF;
+}
+
 .form-ds{
     background: #FFF;
     padding: 10px;
+}
+.container {
+    width: auto;
+}
+.btn-danger {
+    position:absolute;
+    right:50px; 
 }

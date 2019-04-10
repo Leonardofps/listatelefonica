@@ -52,8 +52,8 @@
                     <td>{{$empresa->telefone1}}</td>
                     <td>{{$empresa->celular}}</td>
                  <td>
-                 <a href="{{route('empresa.edit', $empresa->id)}}" class="edit">Editar</a>
-                 <a href="{{route('empresa.show', $empresa->id)}}" class="delete">Ver</a>
+                 <a href="{{route('empresa.edit', $empresa->id)}}" class="edit"> <i class="fa fa-edit fa-lg" title="Editar empresa"></i> </a>
+                 <a href="{{route('empresa.show', $empresa->id)}}" class="show"> <i class="fa fa-eye fa-lg" title="Visualizar empresa"></i> </a>
                  </td>
                 </tr>
             @empty

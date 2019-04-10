@@ -17,8 +17,8 @@ class CreateEmpresasTable extends Migration
             $table->increments('id');
             $table->string('cnpj', 18);
             $table->string('razao_social', 150);
-            $table->string('telefone1', 10);
-            $table->string('celular', 10);
+            $table->string('telefone1', 14);
+            $table->string('celular', 15);
             $table->timestamps();
         });
     }

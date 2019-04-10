@@ -2,15 +2,15 @@
 
 @section('content')
 <div class="container">
-    <h1>Lista de Contatos</h1>
-
+    <h1>Lista de Contatos <i class="fa fa-address-book-o" aria-hidden="true"></i></h1>
+    
     <div class="content-din bg-white">
 
         <div class="form-search">
 
             {!! Form::open(['route' => 'pessoa.search', 'class' => 'form form-inline'])!!}
 
-            {!! Form::text('key_search', null, ['class' => 'form-control', 'placeholder'=>'O que você procura?'])!!}
+            {!! Form::text('key_search', null, ['class' => 'form-control', 'placeholder'=>'Pesquise um nome'])!!}
             <button class="btn btn-search">Pesquisar</button>
             {!! Form::close() !!}
 
@@ -31,6 +31,7 @@
         </div>
 
         <div class="class-btn-insert">
+
             <a href="{{route('pessoa.create')}}" class="btn-insert">
                 <span class="glyphicon glyphicon-plus"></span>
                 Novo contato
@@ -65,8 +66,8 @@
                 </td>
                 
                 <td>
-                <a href="{{route('pessoa.edit', $pessoa->id)}}" class="edit">Editar</a>
-                <a href="{{route('pessoa.show', $pessoa->id)}}" class="delete">Ver</a>
+                <a href="{{route('pessoa.edit', $pessoa->id)}}" class= "edit"> <i class="fa fa-edit fa-lg" title="Editar contato"></i> </a>
+                <a href="{{route('pessoa.show', $pessoa->id)}}" class= "show"> <i class="fa fa-eye fa-lg" title="Visualizar contato"></i> </a>
                 </td>
             </tr>
             @empty

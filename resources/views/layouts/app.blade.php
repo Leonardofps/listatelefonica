@@ -8,10 +8,11 @@
 
 		<!--Fonts-->
 		<link rel="stylesheet" href="{{url('assets/panel/css/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{url('assets/panel/css/font-awesome.css')}}">
 
 		<!--CSS Person-->
-		<link rel="stylesheet" href="{{url('assets/panel/css/especializati.css')}}">
-		<link rel="stylesheet" href="{{url('assets/panel/css/especializati-reset.css')}}">
+		<link rel="stylesheet" href="{{url('assets/panel/css/agenda-projeto.css')}}">
+		<link rel="stylesheet" href="{{url('assets/panel/css/agenda-reset.css')}}">
 
 		<!--Favicon-->
 		<link rel="icon" type="image/png" href="{{url('assets/panel/imgs/favicon.png')}}">

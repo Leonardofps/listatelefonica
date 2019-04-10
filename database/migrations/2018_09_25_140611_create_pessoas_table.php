@@ -19,7 +19,7 @@ class CreatePessoasTable extends Migration
             $table->string('cargo', 100);
             $table->string('emails', 100);
             $table->string('telefone', 14);
-            $table->string('celular', 15);
+            $table->string('celular', 15)->nullable();
             $table->string('nome_secretaria', 100)->nullable();
             $table->timestamps();
         });

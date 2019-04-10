@@ -45,6 +45,18 @@
         <!-- <input type="text" name="nome_secretaria" placeholder="Secretária:" class="form-control">-->
         <strong><li>{{$pessoa->nome_secretaria}}</li></strong>    
     </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="categoria">Categoria: </label>
+        <strong>
+            <li>
+                @foreach($pessoa->categorias as $categoria)
+                {{$categoria->nome}}, 
+                @endforeach
+            </li>
+        </strong>
+    </div>
+    
     {!! Form::open(['route' => ['pessoa.destroy', $pessoa->id], 'class'=> 'form form-search form-ds', 'method'=> 'DELETE']) !!}
     <div class="form-group">
         <button class="btn btn-danger">Deletar contato</button>

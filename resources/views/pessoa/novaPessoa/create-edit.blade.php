@@ -16,28 +16,28 @@
         <label class="col-md-3 control-label" for="name">Nome: </label>
 
         <!-- <input type="text" name="nome" placeholder="Nome:" class="form-control">-->
-        {!! Form::text('nome', null, ['class' => 'form-control', 'placeholder' => 'Nome']) !!}
+        {!! Form::text('nome', null, ['class' => 'form-control', 'placeholder' => 'Nome', 'required'=> 'required', ]) !!}
     </div>
 
     <div class="form-group">
         <label class="col-md-3 control-label" for="cargo">Cargo: </label>
 
         <!--<input type="text" name="cargo" placeholder="Cargo:" class="form-control">-->
-        {!! Form::text('cargo', null, ['class' => 'form-control', 'placeholder' => 'Cargo']) !!}
+        {!! Form::text('cargo', null, ['class' => 'form-control', 'placeholder' => 'Cargo', 'required'=> 'required']) !!}
     </div>
 
     <div class="form-group">
         <label class="col-md-3 control-label" for="email">E-mail: </label>
 
         <!--<input type="text" name="emails" placeholder="E-mail:" class="form-control">-->
-        {!! Form::text('emails', null, ['class' => 'form-control', 'placeholder' => 'E-Mail']) !!}
+        {!! Form::text('emails', null, ['class' => 'form-control', 'placeholder' => 'E-Mail', 'required'=> 'required']) !!}
     </div>
 
     <div class="form-group">
         <label class="col-md-3 control-label" for="telefone">Telefone: </label>
 
         <!--<input type="text" name="emails" placeholder="E-mail:" class="form-control">-->
-        {!! Form::text('telefone', null, ['oninput'=> 'mascarafixo(this)', 'class' => 'form-control', 'placeholder' => 'Telefone', 'id' => 'telefone']) !!}
+        {!! Form::text('telefone', null, ['oninput'=> 'mascarafixo(this)', 'class' => 'form-control', 'placeholder' => 'Telefone', 'id' => 'telefone', 'required'=> 'required']) !!}
     </div>
 
     <div class="form-group">
@@ -49,7 +49,6 @@
 
     <div class="form-group">
         <label class="col-md-3 control-label" for="nome_secretaria">Nome da Secretária: </label>
-
         <!-- <input type="text" name="nome_secretaria" placeholder="Secretária:" class="form-control">-->
         {!! Form::text('nome_secretaria', null, ['class' => 'form-control', 'placeholder' => 'Nome da Secretária']) !!}
     </div> 
@@ -61,9 +60,17 @@
         @endforeach
     </div>
 
+    @if(!isset($pessoa))
     <div class="form-group">
         <button class="btn btn-primary">Cadastrar</button>
     </div>
+
+    @else
+    <div class="form-group">
+        <button class="btn btn-primary">Atualizar</button>
+    </div>
+    @endif
+
     {!! Form::close() !!}
 </div>
 @endsection

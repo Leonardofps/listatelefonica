@@ -24,7 +24,10 @@ class PessoaStoreUpdateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'nome'      => 'required',
+            'cargo'     => 'required',
+            'emails'    => 'required',
+            'telefone'  => 'required'
         ];
     }
 }
