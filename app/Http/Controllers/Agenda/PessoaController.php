@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Pessoa;
 use App\Models\Categoria;
+use App\Models\Empresa;
 use App\Http\Requests\PessoaStoreUpdateFormRequest;
 
 class PessoaController extends Controller
@@ -14,7 +15,7 @@ class PessoaController extends Controller
     private $pessoa;
     protected $totalPage = 4;
 
-    public function __construct(Pessoa $pessoa, Categoria $categorias){
+    public function __construct(Pessoa $pessoa, Categoria $categorias, Empresa $empresa){
         $this->pessoa = $pessoa;
         $this->categorias = $categorias; 
     }
@@ -54,9 +55,27 @@ class PessoaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PessoaStoreUpdateFormRequest $request)
+    public function store(Request $request)
     {   
-        $pessoa = Pessoa::create($request->all());
+
+        $empresa = new Empresa();
+        $empresa->cnpj = $request->get('cnpj');
+        $empresa->razao_social = $request->get('razao_social');
+        $empresa->telefone1 = $request->get('telefone1');
+        $empresa->celular = $request->get('celular');
+        $empresa->save();
+        $empresa_id = $empresa->id;
+
+        $pessoa = new Pessoa();
+        $pessoa->nome = $request->get('nome');
+        $pessoa->cargo = $request->get('cargo');
+        $pessoa->emails = $request->get('emails');
+        $pessoa->telefone = $request->get('telefone');
+        $pessoa->celular = $request->get('celular');
+        $pessoa->nome_secretaria = $request->get('nome_secretaria');
+        $pessoa->empresa_id = $empresa_id;
+        $pessoa->save();
+
         $pessoa->categorias()->attach($request->categorias);
 
             return redirect()

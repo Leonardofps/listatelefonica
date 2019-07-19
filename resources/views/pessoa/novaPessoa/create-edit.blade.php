@@ -12,6 +12,35 @@
     <!--<form class="form form-search form-ds" action="{{route('pessoa.store')}}" method="POST">-->
     {!! Form::open(['route' => 'pessoa.store','class'=> 'form form-search form-ds']) !!}
     @endif
+
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="cnpj">CNPJ: </label>
+            
+        <!-- <input type="text" name="cnpj" placeholder="CNPJ:" class="form-control"> -->
+        {!! Form::text('cnpj', null, ['oninput'=> 'mascaracnpj(this)','placeholder'=>'CNPJ:', 'class'=>'form-control', 'required'=> 'required']) !!}
+        </div>
+
+        <div class="form-group">
+        <label class="col-md-3 control-label" for="razao_social">Razão Social: </label>
+
+        <!-- <input type="text" name="razao_social" placeholder="Razão Social:" class="form-control"> -->
+        {!! Form::text('razao_social', null, ['placeholder'=>'Razão Social:', 'class'=>'form-control', 'required'=> 'required'])!!}
+        </div> 
+
+        <div class="form-group">
+        <label class="col-md-3 control-label" for="telefone1">Telefone: </label>
+
+        <!-- <input type="text" name="telefone1" placeholder="Telefone:" class="form-control"> -->
+        {!! Form::text('telefone1', null, ['oninput'=> 'mascarafixo(this)','placeholder'=>'Telefone:', 'class'=>'form-control', 'required'=> 'required'])!!}
+
+        </div>
+
+        <div class="form-group">
+        <label class="col-md-3 control-label" for="celular">Celular: </label>
+        <!-- <input type="text" name="celular" placeholder="Celular:" class="form-control"> -->
+        {!! Form::text('celular', null, ['oninput'=> 'mascaracelular(this)','placeholder'=>'Celular:', 'class'=>'form-control', 'required'=> 'required'])!!}
+        </div>
+
     <div class="form-group">
         <label class="col-md-3 control-label" for="name">Nome: </label>
 

@@ -27,7 +27,8 @@ class PessoaStoreUpdateFormRequest extends FormRequest
             'nome'      => 'required',
             'cargo'     => 'required',
             'emails'    => 'required',
-            'telefone'  => 'required'
+            'telefone'  => 'required',
+            'empresa'   => 'required'
         ];
     }
 }

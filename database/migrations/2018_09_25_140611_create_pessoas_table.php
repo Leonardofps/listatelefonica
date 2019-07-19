@@ -21,6 +21,8 @@ class CreatePessoasTable extends Migration
             $table->string('telefone', 14);
             $table->string('celular', 15)->nullable();
             $table->string('nome_secretaria', 100)->nullable();
+            $table->integer('empresa_id')->unsigned();
+            $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
             $table->timestamps();
         });
     }
