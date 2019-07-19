@@ -57,10 +57,11 @@
         </strong>
     </div>
     
-    {!! Form::open(['route' => ['pessoa.destroy', $pessoa->id], 'class'=> 'form form-search form-ds', 'method'=> 'DELETE']) !!}
+    {!! Form::open(['route' => ['pessoa.destroy', $pessoa->id], 'class'=> 'form form-search form-ds', 'method'=> 'DELETE', 'onsubmit'=> 'return confirmDelete()']) !!}
     <div class="form-group">
-        <button class="btn btn-danger">Deletar contato</button>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#delete">Deletar contato</button>
     </div>
+
     {!! Form::close() !!}
 </div>
 @endsection

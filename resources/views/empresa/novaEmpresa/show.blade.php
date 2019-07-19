@@ -5,7 +5,7 @@
     <h1> Cadastro de contatos</h1>
 
     <!--<form class="form form-search form-ds" action="{{route('pessoa.store')}}" method="POST">-->
-    <div class="form-group">
+    <div class="form-group">0
         <label class="col-md-2 control-label" for="cnpj">CNPJ: </label>
 
         <!-- <input type="text" name="nome" placeholder="Nome:" class="form-control">-->
@@ -33,7 +33,7 @@
         <strong><li>{{$empresa->celular}}</li></strong>
     </div>
 
-    {!! Form::open(['route' => ['empresa.destroy', $empresa->id], 'class'=> 'form form-search form-ds', 'method'=> 'DELETE']) !!}
+    {!! Form::open(['route' => ['empresa.destroy', $empresa->id], 'onsubmit'=>'return confirmDelete()', 'class'=> 'form form-search form-ds', 'method'=> 'DELETE']) !!}
     <div class="form-group">
         <button class="btn btn-danger">Deletar empresa</button>
     </div>

@@ -19,9 +19,17 @@ function mascarafixo(i) {
 function mascaracnpj(i) {
     var v = i.value;
     v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
-    v = v.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5");//Coloca parênteses em volta dos dois primeiros dígitos
-//    v = v.replace(/(\d{3})(\d)/g, "$1.$2"); 
-  //  v = v.replace(/(\d)(\d{4})$/, "$1/$2"); //Coloca hífen entre o quarto e o quinto dígitos
+    v = v.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5"); //Coloca parênteses em volta dos dois primeiros dígitos
+    //    v = v.replace(/(\d{3})(\d)/g, "$1.$2"); 
+    //  v = v.replace(/(\d)(\d{4})$/, "$1/$2"); //Coloca hífen entre o quarto e o quinto dígitos
     i.value = v.substring(0, v.length + 1);
     i.setAttribute("maxlength", "18");
+}
+
+function confirmDelete() {
+    var x = confirm("Você tem certeza que deseja excluir ?");
+    if (x)
+        return true;
+    else
+        return false;
 }

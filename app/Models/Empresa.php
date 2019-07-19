@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Empresa extends Model
 {
     protected $fillable = ['cnpj', 'razao_social', 'telefone1', 'celular'];
+
+    public function pessoas(){
+        return $this->hasMany(Pessoa::class);
+    }
+
 }

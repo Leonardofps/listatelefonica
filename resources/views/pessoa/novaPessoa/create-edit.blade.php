@@ -30,7 +30,7 @@
         <label class="col-md-3 control-label" for="email">E-mail: </label>
 
         <!--<input type="text" name="emails" placeholder="E-mail:" class="form-control">-->
-        {!! Form::text('emails', null, ['class' => 'form-control', 'placeholder' => 'E-Mail', 'required'=> 'required']) !!}
+        {!! Form::text('emails', null, ['class' => 'form-control', 'placeholder' => 'E-mail', 'required'=> 'required']) !!}
     </div>
 
     <div class="form-group">

@@ -17,4 +17,8 @@ class Pessoa extends Model
         return $this->belongsToMany(Categoria::class, 'categoria_pessoa');
     }
 
+    public function empresas(){
+        return $this->belongsTo(Empresa::class);
+    }
+
 }

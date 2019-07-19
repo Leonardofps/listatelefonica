@@ -35,7 +35,6 @@
 					Pessoa
 				</a>
 			</li>
-
 			<li>
 				<a href="{{route('empresa.index')}}">
 					<i class="fa fa-building"></i>
